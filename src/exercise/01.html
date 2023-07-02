@@ -7,6 +7,22 @@
 <!--   📜 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules -->
 <!--   📜 https://github.com/mdn/js-examples/tree/master/module-examples -->
 
+<html>
+    <body>
+        <div id="root"></div>
+        <script type="module">
+            const root = document.createElement('div');
+            root.setAttribute('id', 'root');
+            document.body.append(root);
+
+            let div = document.createElement('div');
+            div.textContent = 'Hello World';
+            div.className = 'container';
+            root.append(div);
+            
+        </script>
+    </body>
+</html>
 <!-- These next instructions are to be written in JavaScript in the <script> tag -->
 <!-- 🐨 Create a div -->
 <!--   💰 document.createElement('div') -->

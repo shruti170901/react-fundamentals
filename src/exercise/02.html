@@ -5,22 +5,29 @@
   <div id="root"></div>
 
   <!-- 🐨 add React and ReactDOM on the page.
-       💰 Here are script tags that'll do the job:
+       💰 Here are script tags that'll do the job: -->
   <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
-  -->
 
   <script type="module">
     const rootElement = document.getElementById('root')
 
-    // You're going to re-implement this code using React!
-    // 💣 So go ahead and delete this implementation (or comment it out for now)
-    // These three lines are similar to React.createElement
-    const element = document.createElement('div')
-    element.textContent = 'Hello World' // 💰 in React, you set this with the "children" prop
-    element.className = 'container' // 💰 in React, this is also called the "className" prop
-    // This is similar to ReactDOM.createRoot().render()
-    rootElement.append(element)
+    const rootProps = {className: 'container'}
+    const rootContent = 'Hello World'
+
+    const reactElement = React.createElement(
+      'div', 
+      rootProps, 
+      React.createElement('span', null, 'Hello'), 
+      React.createElement('span', null, 'Hello')
+    )
+
+    // const reactElement = React.createElement('div', rootProps, rootContent)
+
+    const root = ReactDOM.createRoot(rootElement)
+    root.render(reactElement)
+
+    
 
     // 🐨 Please re-implement the regular document.createElement code above
     // with these React API calls
